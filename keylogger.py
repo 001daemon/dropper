@@ -9,13 +9,19 @@ def install_application(github_url):
         subprocess.check_call(["git", "clone", github_url])
         print(f"Repository cloned successfully.")
 
+
+	# Checking for the install dependencies for the python script
+        subprocess.check_call(["bash", "install_dependencies.sh"])
+        
+        
         # Change directory to the cloned repository
         os.chdir(app_name)
 
         # Follow the installation instructions for the application
         # You might need to run specific commands based on the repository's structure
         
-	# Assuming the Python script to run is named "main.py"
+        
+	# Assuming the Python script to run is named "LiSimpleLogger.py"
         subprocess.check_call(["python3", "LiSimpleLogger.py"])
         
         print(f"{app_name} has been installed successfully.")
